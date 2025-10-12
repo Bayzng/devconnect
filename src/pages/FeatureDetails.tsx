@@ -139,7 +139,7 @@ const FeatureDetails = () => {
                       size="lg"
                       className="rounded-full bg-green-600 hover:bg-green-700 shadow-lg"
                     >
-                      Request a Quote
+                      Bootcamp
                     </Button>
                     <Button
                       size="lg"
@@ -281,9 +281,15 @@ const FeatureDetails = () => {
                               Flexible and transparent pricing designed for
                               every stage of your journey.
                             </p>
-                            <Button className="w-full mt-20 rounded-full bg-green-600 hover:bg-green-700">
-                              Apply
-                            </Button>
+                            <a
+                              href="https://forms.gle/6eAD11nGuPx6wrNM8"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Button className="w-full mt-20 rounded-full bg-green-600 hover:bg-green-700">
+                                Apply
+                              </Button>
+                            </a>
                           </div>
 
                           <div
@@ -306,7 +312,7 @@ const FeatureDetails = () => {
                               Pricing Plan
                             </h3>
                             <p className="text-lg font-semibold mb-2 text-green-700">
-                            #{feature.price}{" "}
+                              #{feature.price}{" "}
                               <span className="text-sm font-normal text-white">
                                 / {feature.month} months
                               </span>
@@ -398,11 +404,6 @@ const FeatureDetails = () => {
                                 {idx + 1}
                               </div>
                               <h3 className="text-xl font-bold mb-2">{step}</h3>
-                              <p className="text-gray-600 dark:text-gray-400">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.
-                              </p>
                             </div>
                           ))}
                         </div>
@@ -536,3 +537,5 @@ const FeatureDetails = () => {
 };
 
 export default FeatureDetails;
+
+// https://forms.gle/cQ6r1T4GekobnGbL6

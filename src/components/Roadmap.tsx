@@ -28,21 +28,21 @@ const Roadmap = () => {
       status: "completed"
     },
     {
-      year: "2024 Q2",
+      year: "2025 Q2",
       title: "Tech Event",
       description: "A gathering of developers, innovators, and tech enthusiasts shaping the future of software, Web3, and AI.",
       icon: <BarChart4 className="w-5 h-5" />,
       status: "current"
     },
     {
-      year: "2024 Q3",
+      year: "2026 Q3",
       title: "Custom Agent Builder",
       description: "Low-code tool for creating specialized agents for unique workflows.",
       icon: <Clock className="w-5 h-5" />,
       status: "upcoming"
     },
     {
-      year: "2024 Q4",
+      year: "2026 Q4",
       title: "Enterprise Suite",
       description: "Advanced security, compliance, and management features for large organizations.",
       icon: <BuildingIcon className="w-5 h-5" />,

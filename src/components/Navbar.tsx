@@ -147,8 +147,8 @@ const Navbar = () => {
                       />
                       <NavMenuItem
                         href="/services/production"
-                        title="Production"
-                        description="Bringing ideas to life with creative storytelling."
+                        title="Bootcamp"
+                        description="Bringing ideas to life with creative developers."
                         icon={<Film className="h-4 w-4 text-brand-500" />}
                       />
                     </div>
