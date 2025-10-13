@@ -157,11 +157,11 @@ const Index = () => {
             <Statistics />
             <MasonryGallery />
             <CoreTeam />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <Events />
             <Roadmap />
-            <CallToAction />
-            <BookCall />
+            {/* <CallToAction /> */}
+            {/* <BookCall /> */}
             <Faq />
           </main>
           <Footer />

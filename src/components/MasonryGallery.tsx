@@ -5,7 +5,6 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-// Define the gallery item type for better type checking
 export type GalleryItem = {
   id: string;
   type: "image" | "video";
@@ -15,7 +14,6 @@ export type GalleryItem = {
   category?: string;
 };
 
-// Sample gallery items array - can be extended or moved to a data file
 const galleryItems: GalleryItem[] = [
   {
     id: "1",
@@ -30,7 +28,7 @@ const galleryItems: GalleryItem[] = [
     src: "/devConnect.mp4",
     thumbnail:
       "https://images.unsplash.com/photo-1664575599730-0814817939de?q=80&w=2070&auto=format&fit=crop",
-    alt: "AI Video",
+    alt: "AI Innovation",
     category: "AI",
   },
   {
@@ -53,34 +51,26 @@ const galleryItems: GalleryItem[] = [
     src: "/devConnect.mp4",
     thumbnail:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    alt: "Corporate Video",
+    alt: "Corporate Business",
     category: "business",
   },
   {
     id: "6",
     type: "image",
     src: "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?q=80&w=2187&auto=format&fit=crop",
-    alt: "Woman with VR headset",
+    alt: "Innovation & Technology",
     category: "technology",
   },
   {
     id: "7",
     type: "image",
     src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=5304&auto=format&fit=crop",
-    alt: "Woman using laptop",
+    alt: "Ai Technology",
     category: "technology",
   },
 ];
 
-interface MasonryGalleryProps {
-  className?: string;
-  items?: GalleryItem[];
-}
-
-const MasonryGallery: React.FC<MasonryGalleryProps> = ({
-  className,
-  items = galleryItems,
-}) => {
+const MasonryGallery = ({ className, items = galleryItems }) => {
   const { theme } = useTheme();
   const [activeItem, setActiveItem] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -91,7 +81,6 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
 
-  // Get unique categories from items
   const categories = Array.from(
     new Set(items.map((item) => item.category).filter(Boolean) as string[])
   );
@@ -100,73 +89,48 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
     : items;
 
   useGSAP(() => {
-    // Stagger animation for gallery items on load
     gsap.fromTo(
       ".masonry-item",
-      {
-        y: 50,
-        opacity: 0,
-        scale: 0.95,
-      },
+      { y: 50, opacity: 0, scale: 0.95 },
       {
         y: 0,
         opacity: 1,
         scale: 1,
         duration: 1,
-        stagger: {
-          amount: 0.8,
-          from: "random",
-        },
+        stagger: { amount: 0.8, from: "random" },
         ease: "power3.out",
       }
     );
-  }, [selectedCategory]); // Re-run animation when category changes
+  }, [selectedCategory]);
 
-  const handleMouseEnter = (id: string, type: "image" | "video") => {
+  const handleMouseEnter = (id, type) => {
     setActiveItem(id);
-    if (type === "video" && videoRefs.current[id]) {
-      videoRefs.current[id]
-        .play()
-        .catch((err) => console.error("Error playing video:", err));
-    }
+    if (type === "video" && videoRefs.current[id]) videoRefs.current[id].play();
   };
 
-  const handleMouseLeave = (id: string, type: "image" | "video") => {
+  const handleMouseLeave = (id, type) => {
     setActiveItem(null);
-    if (type === "video" && videoRefs.current[id]) {
+    if (type === "video" && videoRefs.current[id])
       videoRefs.current[id].pause();
-    }
   };
 
-  const handleExpandItem = (id: string) => {
+  const handleExpandItem = (id) =>
     setExpanded(expanded === id ? null : id);
-  };
 
-  const openFullscreen = (item: GalleryItem) => {
+  const openFullscreen = (item) => {
     setFullscreenItem(item);
-    if (item.type === "video" && videoRefs.current[item.id]) {
+    if (item.type === "video" && videoRefs.current[item.id])
       videoRefs.current[item.id].pause();
-    }
   };
 
-  const closeFullscreen = () => {
-    setFullscreenItem(null);
-  };
+  const closeFullscreen = () => setFullscreenItem(null);
 
   useGSAP(() => {
     if (fullscreenItem) {
       gsap.fromTo(
         ".fullscreen-modal",
-        {
-          opacity: 0,
-          scale: 0.95,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: "power3.out",
-        }
+        { opacity: 0, scale: 0.95 },
+        { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }
       );
     }
   }, [fullscreenItem]);
@@ -174,11 +138,11 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
   return (
     <>
       <div
-        className={cn("container mx-auto px-4 py-16", className)}
+        className={cn("container mx-auto px-3 sm:px-4 py-10 sm:py-16", className)}
         ref={containerRef}
       >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4">
             <span
               className={
                 theme === "dark" ? "dark-gradient-text" : "light-gradient-text"
@@ -187,17 +151,16 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
               Visual Showcase
             </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
             Explore our work through this curated collection of images and
             videos showcasing our projects and achievements.
           </p>
 
-          {/* Category filters */}
           {categories.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-1">
               <button
                 className={cn(
-                  "px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                  "px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300",
                   !selectedCategory
                     ? "bg-brand-500 text-white shadow-lg"
                     : "bg-gray-100/80 dark:bg-gray-800/80 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -210,7 +173,7 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
                 <button
                   key={category}
                   className={cn(
-                    "px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                    "px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300",
                     selectedCategory === category
                       ? "bg-brand-500 text-white shadow-lg"
                       : "bg-gray-100/80 dark:bg-gray-800/80 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -224,17 +187,16 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[300px] gap-6 md:gap-8">
+        {/* 🧩 Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] sm:auto-rows-[300px] gap-4 sm:gap-8">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
               className={cn(
-                "masonry-item group overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer",
-                "shadow-lg hover:shadow-2xl",
-                expanded === item.id &&
-                  "md:col-span-2 lg:col-span-2 row-span-2",
+                "masonry-item group overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer",
+                "shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl",
+                expanded === item.id && "sm:col-span-2 sm:row-span-2",
                 index % 5 === 0 && "lg:col-span-2 row-span-2",
-                index % 3 === 1 && "row-span-2",
                 theme === "dark" ? "bg-gray-900" : "bg-white",
                 "transform-gpu hover:scale-[1.02]"
               )}
@@ -278,54 +240,6 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
                     />
                   </div>
                 )}
-
-                {/* Hover Overlay */}
-                <div
-                  className={cn(
-                    "absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  )}
-                >
-                  <div
-                    className={cn(
-                      "transform transition-all duration-500 flex flex-col items-center gap-4",
-                      "translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100"
-                    )}
-                  >
-                    <div className="bg-white/90 dark:bg-gray-900/90 p-4 rounded-full">
-                      {item.type === "video" ? (
-                        <Play className="w-6 h-6 text-brand-500" />
-                      ) : (
-                        <ImageIcon className="w-6 h-6 text-brand-500" />
-                      )}
-                    </div>
-
-                    <button
-                      onClick={() => handleExpandItem(item.id)}
-                      className="bg-white/90 dark:bg-gray-900/90 p-2 rounded-full hover:scale-110 transition-transform duration-300"
-                    >
-                      <Maximize className="w-4 h-4 text-brand-500" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Caption */}
-                <div
-                  className={cn(
-                    "absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent",
-                    "transform transition-all duration-300",
-                    "translate-y-full group-hover:translate-y-0"
-                  )}
-                >
-                  <p className="text-white text-lg font-medium mb-1">
-                    {item.alt}
-                  </p>
-                  {item.category && (
-                    <span className="text-sm text-gray-300">
-                      {item.category.charAt(0).toUpperCase() +
-                        item.category.slice(1)}
-                    </span>
-                  )}
-                </div>
               </div>
             </div>
           ))}
@@ -334,41 +248,29 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
 
       {/* Fullscreen Modal */}
       {fullscreenItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
-          <div className="fullscreen-modal relative w-full h-full max-w-[90vw] max-h-[90vh] m-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm px-3">
+          <div className="fullscreen-modal relative w-full h-[80vh] sm:h-[90vh] max-w-[95vw] sm:max-w-[90vw] m-auto">
             <button
               onClick={closeFullscreen}
-              className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
             >
-              <X className="w-8 h-8 text-white" />
+              <X className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
             </button>
 
             {fullscreenItem.type === "image" ? (
               <img
                 src={fullscreenItem.src}
                 alt={fullscreenItem.alt}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain rounded-lg"
               />
             ) : (
               <video
                 src={fullscreenItem.src}
                 autoPlay
                 controls
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain rounded-lg"
               />
             )}
-
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
-              <p className="text-white text-xl font-medium mb-2">
-                {fullscreenItem.alt}
-              </p>
-              {fullscreenItem.category && (
-                <span className="text-lg text-gray-300">
-                  {fullscreenItem.category.charAt(0).toUpperCase() +
-                    fullscreenItem.category.slice(1)}
-                </span>
-              )}
-            </div>
           </div>
         </div>
       )}

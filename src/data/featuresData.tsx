@@ -94,7 +94,7 @@ export const features = [
     ],
     icon: <CalendarClock />,
     price: "400,000",
-    month: "3",
+    month: "6",
   },
   {
     id: "uiux",
@@ -151,7 +151,7 @@ export const features = [
     ],
     icon: <LampCeilingIcon />,
     price: "150,000",
-    month: "3",
+    month: "2",
   },
   {
     id: "Fullstack",
@@ -180,6 +180,6 @@ export const features = [
     ],
     icon: <RocketIcon />,
     price: "500,000",
-    month: "3",
+    month: "6",
   },
 ];

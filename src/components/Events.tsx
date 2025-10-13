@@ -66,13 +66,13 @@ export default function Events({ className, ...props }: CardProps) {
   return (
     <div className="py-20 container bg-white dark:bg-gray-950 relative overflow-hidden flex flex-col items-center">
       <RevealAnimation>
-        <h2 className="text-3xl md:text-5xl text-center font-bold w-fit block tracking-wide uppercase mb-3 text-main-primary">
+        <h2 className="text-2xl md:text-5xl text-center font-bold w-fit block tracking-wide uppercase mb-3 text-main-primary">
           Our Upcoming Events
         </h2>
       </RevealAnimation>
 
       <RevealAnimation delay={0.1}>
-        <h3 className="text-xl md:text-4xl font-display  text-gray-900 dark:text-white mb-4">
+        <h3 className="text-1xl md:text-4xl font-display  text-gray-900 dark:text-white mb-4">
           supercharge your workflow
         </h3>
       </RevealAnimation>

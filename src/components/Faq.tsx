@@ -14,28 +14,35 @@ const Faq = () => {
   const faqs = [
     {
       question: "What is DevConnect?",
-      answer: "DevConnect is a community-driven tech event that brings together developers, innovators, and enthusiasts to explore the future of software, Web3, AI, and emerging technologies. It’s a hub for learning, collaboration, and networking."
+      answer:
+        "DevConnect is a coding hub and innovation community where individuals can learn software development from beginner to expert level. We also specialize in organizing blockchain events and building strong, engaging tech communities.",
     },
     {
-      question: "Who can attend DevConnect?",
-      answer: "Anyone passionate about technology can attend DevConnect — from beginners to experienced developers, tech entrepreneurs, startups, and industry leaders. The event is designed to be inclusive and welcoming to all skill levels."
+      question: "Who can join DevConnect?",
+      answer:
+        "Anyone interested in technology, software development, or blockchain can join DevConnect — whether you're a complete beginner, an experienced developer, or part of a growing tech startup.",
     },
     {
-      question: "What activities take place at DevConnect?",
-      answer: "DevConnect features workshops, keynote talks, hackathons, panel discussions, product demos, and networking sessions. It's a hands-on experience designed to help attendees learn, build, and connect with others in the tech ecosystem."
+      question: "What does DevConnect offer?",
+      answer:
+        "DevConnect offers hands-on coding programs, workshops, and mentorship sessions. We also host blockchain events, community meetups, and developer challenges to help members learn, collaborate, and grow.",
     },
     {
       question: "Does DevConnect support collaborations?",
-      answer: "Yes! DevConnect is all about collaboration. Whether you’re a solo developer, part of a startup, or an enterprise innovator, the event provides opportunities to connect, exchange ideas, and build projects together."
+      answer:
+        "Yes! Collaboration is at the heart of DevConnect. We create opportunities for developers, entrepreneurs, and tech enthusiasts to connect, share ideas, and build impactful projects together.",
     },
     {
-      question: "How do I register for DevConnect?",
-      answer: "Registration can be completed online through our event platform. Simply choose your ticket type, sign up, and you’ll be ready to join the experience. Follow our updates for special passes and community discounts."
+      question: "How can I join or register?",
+      answer:
+        "You can register easily through our online platform. Simply sign up, choose your program or event, and you’re set to begin your DevConnect journey.",
     },
     {
-      question: "What support is available for attendees?",
-      answer: "Our team provides dedicated support before and during the event. We also offer guidance for first-time attendees, detailed schedules, and community channels to ensure you make the most of DevConnect."
+      question: "Is there support for new members?",
+      answer:
+        "Absolutely. Our team provides ongoing support, resources, and mentorship to help both new and existing members succeed in their learning and community engagement.",
     }
+    
   ];
 
   return (
