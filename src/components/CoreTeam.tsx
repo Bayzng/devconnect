@@ -8,23 +8,10 @@ import gsap from "gsap";
 
 // Team member data
 const teamMembers = [
+  
   {
     id: 1,
-    name: "A. Adebayo",
-    role: "Team Lead",
-    bio: "Passionate developer driving innovation and growth in Africa’s tech ecosystem.",
-    avatar:
-      "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg",
-    socials: {
-      twitter: "https://twitter.com/dev_bayz",
-      github: "https://github.com/Bayzng",
-      linkedin: "https://www.linkedin.com/in/abdulakeem-adebayo-678530199",
-      email: "meet.bayzng@gmail.com",
-    },
-  },
-  {
-    id: 2,
-    name: "Hardik K",
+    name: "Adedeji K",
     role: "Blockchain Developer",
     bio: "Specialized in blockchain development, smart contracts, and decentralized systems.",
     avatar:
@@ -37,8 +24,22 @@ const teamMembers = [
     },
   },
   {
+    id: 2,
+    name: "A. Adebayo",
+    role: "Lead Developer",
+    bio: "Passionate developer driving innovation and growth in Africa’s tech ecosystem.",
+    avatar:
+      "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg",
+    socials: {
+      twitter: "https://twitter.com/dev_bayz",
+      github: "https://github.com/Bayzng",
+      linkedin: "https://www.linkedin.com/in/abdulakeem-adebayo-678530199",
+      email: "meet.bayzng@gmail.com",
+    },
+  },
+  {
     id: 3,
-    name: "I. David",
+    name: "I. Omolara",
     role: "Head of Operation",
     bio: "Head of Operations, leading strategy and execution to drive growth and efficiency across all teams.",
     avatar:

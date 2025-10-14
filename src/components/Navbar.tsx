@@ -186,7 +186,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center space-x-3">
-            <ThemeToggle className="rounded-full hover:bg-green-600/20 hover:border-[1px] border-green-600" />
+            {/* <ThemeToggle className="rounded-full hover:bg-green-600/20 hover:border-[1px] border-green-600" /> */}
             <a href="https://calendly.com/meet-devconnect/">
               <Button
                 variant="outline"
@@ -206,7 +206,7 @@ const Navbar = () => {
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Button
               variant="outline"
               size="sm"

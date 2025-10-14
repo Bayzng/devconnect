@@ -39,7 +39,7 @@ const EventsInfo: EventInfo[] = [
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
   },
   {
-    EventName: "Happy Hour",
+    EventName: "Happy Hour Pitch",
     EventDate: "Null",
     EventTime: "Null",
     EventLocation: "DevConnect Hub",
@@ -125,7 +125,7 @@ export default function Events({ className, ...props }: CardProps) {
                 className="w-full"
               >
                 <Button className="w-full ">
-                  <Check /> Register
+                  <Check /> Coming  Soon
                 </Button>
               </Link>
               {/* <Link

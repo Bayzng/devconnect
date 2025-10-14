@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -60,17 +59,17 @@ const ImageSlider = ({
 
   const goToSlide = (index: number) => {
     if (isAnimating) return;
-    
+
     setIsAnimating(true);
-    
+
     if (index > currentImageIndex) {
       setDirection("next");
     } else if (index < currentImageIndex) {
       setDirection("prev");
     }
-    
+
     setCurrentImageIndex(index);
-    
+
     setTimeout(() => {
       setIsAnimating(false);
       setDirection(null);
@@ -89,9 +88,7 @@ const ImageSlider = ({
 
   const handleMouseEnter = () => {
     setIsPaused(true);
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-    }
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
   };
 
   const handleMouseLeave = () => {
@@ -101,140 +98,147 @@ const ImageSlider = ({
     }
   };
 
-  // Determine the appearance based on the variant
   const getContainerClasses = () => {
     const baseClasses = "relative overflow-hidden rounded-xl";
-    
     switch (variant) {
       case "glass":
-        return cn(baseClasses, isDark 
-          ? "bg-gray-900/40 backdrop-blur-sm border border-gray-800/60" 
-          : "bg-white/60 backdrop-blur-sm border border-gray-200/60 shadow-lg");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-gray-900/40 backdrop-blur-sm border border-gray-800/60"
+            : "bg-white/60 backdrop-blur-sm border border-gray-200/60 shadow-lg"
+        );
       case "neon":
-        return cn(baseClasses, isDark 
-          ? "bg-gray-900 border-2 border-brand-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]" 
-          : "bg-white border-2 border-brand-500/50 shadow-[0_0_15px_rgba(34,197,94,0.2)]");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-gray-900 border-2 border-brand-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+            : "bg-white border-2 border-brand-500/50 shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+        );
       case "minimal":
         return cn(baseClasses, "border-0 shadow-none");
       default:
-        return cn(baseClasses, isDark 
-          ? "bg-gray-900 border border-gray-800" 
-          : "bg-white border border-gray-200 shadow-md");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-gray-900 border border-gray-800"
+            : "bg-white border border-gray-200 shadow-md"
+        );
     }
   };
 
   const getNavButtonClasses = () => {
-    const baseClasses = "absolute top-1/2 -translate-y-1/2 z-10 rounded-full flex items-center justify-center transition-all duration-300";
-    
+    const baseClasses =
+      "absolute top-1/2 -translate-y-1/2 z-10 rounded-full flex items-center justify-center transition-all duration-300";
     switch (variant) {
       case "glass":
-        return cn(baseClasses, isDark 
-          ? "bg-black/30 backdrop-blur-md hover:bg-black/50 text-white" 
-          : "bg-white/50 backdrop-blur-md hover:bg-white/70 text-gray-800 shadow-md");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-black/30 backdrop-blur-md hover:bg-black/50 text-white"
+            : "bg-white/50 backdrop-blur-md hover:bg-white/70 text-gray-800 shadow-md"
+        );
       case "neon":
-        return cn(baseClasses, isDark 
-          ? "bg-gray-900 border border-brand-500/50 text-brand-400 hover:bg-gray-800 hover:text-brand-300 shadow-[0_0_10px_rgba(34,197,94,0.3)]" 
-          : "bg-white border border-brand-500/30 text-brand-600 hover:border-brand-500/80 shadow-[0_0_8px_rgba(34,197,94,0.2)]");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-gray-900 border border-brand-500/50 text-brand-400 hover:bg-gray-800 hover:text-brand-300 shadow-[0_0_10px_rgba(34,197,94,0.3)]"
+            : "bg-white border border-brand-500/30 text-brand-600 hover:border-brand-500/80 shadow-[0_0_8px_rgba(34,197,94,0.2)]"
+        );
       case "minimal":
-        return cn(baseClasses, isDark 
-          ? "bg-black/20 hover:bg-black/40 text-white/90" 
-          : "bg-white/40 hover:bg-white/70 text-gray-800 shadow-sm");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-black/20 hover:bg-black/40 text-white/90"
+            : "bg-white/40 hover:bg-white/70 text-gray-800 shadow-sm"
+        );
       default:
-        return cn(baseClasses, isDark 
-          ? "bg-gray-800 hover:bg-gray-700 text-white" 
-          : "bg-white hover:bg-gray-100 text-gray-800 shadow-md");
+        return cn(
+          baseClasses,
+          isDark
+            ? "bg-gray-800 hover:bg-gray-700 text-white"
+            : "bg-white hover:bg-gray-100 text-gray-800 shadow-md"
+        );
     }
   };
 
-  // Aspect ratio handling
   const getAspectRatioClass = () => {
     if (aspectRatio in aspectRatioClasses) {
       return aspectRatioClasses[aspectRatio as keyof typeof aspectRatioClasses];
     }
-    // Custom aspect ratio
     return `aspect-[${aspectRatio}]`;
   };
 
   return (
-    <div 
+    <div
       className={cn("w-full", className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {/* Main slider container */}
-      <div className={cn(
-        getContainerClasses(),
-        getAspectRatioClass()
-      )}>
+      <div className={cn(getContainerClasses(), getAspectRatioClass())}>
         {/* Images */}
-        <div 
+        <div
           className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
-          style={{ 
+          style={{
             transform: `translateX(-${currentImageIndex * 100}%)`,
           }}
         >
           {images.map((image, index) => (
-            <div 
-              key={index} 
-              className="min-w-full h-full flex-shrink-0"
-            >
+            <div key={index} className="min-w-full h-full flex-shrink-0 flex items-center justify-center">
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
                 className={cn(
-                  "w-full h-full object-cover",
-                  direction === "next" && currentImageIndex === index ? "animate-slide-in-right" : 
-                  direction === "prev" && currentImageIndex === index ? "animate-slide-in-left" : ""
+                  "w-full h-full object-contain md:object-cover lg:object-cover transition-all duration-700 rounded-xl max-h-[70vh]",
+                  direction === "next" && currentImageIndex === index
+                    ? "animate-slide-in-right"
+                    : direction === "prev" && currentImageIndex === index
+                    ? "animate-slide-in-left"
+                    : ""
                 )}
+                style={{ objectPosition: "center" }}
               />
-              
+
               {/* Optional gradient overlay */}
               {variant === "glass" && (
-                <div className={cn(
-                  "absolute inset-0 bg-gradient-to-t",
-                  isDark 
-                    ? "from-black/30 to-transparent" 
-                    : "from-black/10 to-transparent"
-                )}></div>
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-t",
+                    isDark
+                      ? "from-black/30 to-transparent"
+                      : "from-black/10 to-transparent"
+                  )}
+                ></div>
               )}
             </div>
           ))}
         </div>
-        
+
         {/* Navigation arrows */}
         {showControls && (
           <>
             <Button
               onClick={goToPrevSlide}
-              className={cn(
-                getNavButtonClasses(),
-                "left-4 w-10 h-10",
-                variant === "minimal" ? "opacity-0 group-hover:opacity-100" : ""
-              )}
+              className={cn(getNavButtonClasses(), "left-4 w-10 h-10")}
               variant="outline"
               size="icon"
             >
               <ChevronLeft className="h-6 w-6" />
-              <span className="sr-only">Previous</span>
             </Button>
-            
+
             <Button
               onClick={goToNextSlide}
-              className={cn(
-                getNavButtonClasses(),
-                "right-4 w-10 h-10",
-                variant === "minimal" ? "opacity-0 group-hover:opacity-100" : ""
-              )}
-              variant="outline" 
+              className={cn(getNavButtonClasses(), "right-4 w-10 h-10")}
+              variant="outline"
               size="icon"
             >
               <ChevronRight className="h-6 w-6" />
-              <span className="sr-only">Next</span>
             </Button>
           </>
         )}
       </div>
-      
+
       {/* Indicators */}
       {showIndicators && (
         <div className="mt-4">
@@ -246,47 +250,35 @@ const ImageSlider = ({
                   onClick={() => goToSlide(index)}
                   className={cn(
                     "transition-all duration-300 rounded-full focus:outline-none",
-                    currentImageIndex === index 
-                      ? cn(
-                          "w-3 h-3",
-                          isDark 
-                            ? "bg-brand-500" 
-                            : "bg-brand-600"
-                        ) 
-                      : cn(
-                          "w-2 h-2",
-                          isDark 
-                            ? "bg-gray-700 hover:bg-gray-600" 
-                            : "bg-gray-300 hover:bg-gray-400"
-                        )
+                    currentImageIndex === index
+                      ? cn("w-3 h-3", isDark ? "bg-brand-500" : "bg-brand-600")
+                      : cn("w-2 h-2", isDark ? "bg-gray-700" : "bg-gray-300")
                   )}
-                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
           )}
-          
+
           {indicatorType === "thumbnails" && (
-            <div className="flex justify-center space-x-2 overflow-x-auto py-2">
+            <div className="flex justify-center gap-2 overflow-x-auto py-2 px-1 scrollbar-hide">
               {images.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={cn(
-                    "w-16 h-12 rounded overflow-hidden transition-all duration-300 focus:outline-none",
-                    currentImageIndex === index 
+                    "w-16 h-12 md:w-20 md:h-14 rounded overflow-hidden transition-all duration-300 focus:outline-none flex-shrink-0",
+                    currentImageIndex === index
                       ? cn(
                           "ring-2 ring-offset-2",
-                          isDark 
-                            ? "ring-brand-500 ring-offset-gray-900" 
+                          isDark
+                            ? "ring-brand-500 ring-offset-gray-900"
                             : "ring-brand-600 ring-offset-white"
-                        ) 
+                        )
                       : "opacity-60 hover:opacity-100"
                   )}
-                  aria-label={`Go to slide ${index + 1}`}
                 >
-                  <img 
-                    src={image} 
+                  <img
+                    src={image}
                     alt={`Thumbnail ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
@@ -294,7 +286,7 @@ const ImageSlider = ({
               ))}
             </div>
           )}
-          
+
           {indicatorType === "slider" && (
             <div className="px-4 py-2">
               <InteractiveSlider
@@ -302,9 +294,7 @@ const ImageSlider = ({
                 max={images.length - 1}
                 step={1}
                 variant="gradient"
-                onValueChange={(values) => {
-                  goToSlide(values[0]);
-                }}
+                onValueChange={(values) => goToSlide(values[0])}
                 formatTooltip={(value) => `${value + 1}/${images.length}`}
               />
             </div>

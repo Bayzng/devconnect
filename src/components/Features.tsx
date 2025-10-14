@@ -30,7 +30,7 @@ const Features = () => {
 
           <RevealAnimation delay={0.1}>
             <h3 className="text-2xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-              Build in Web2 & Web3
+              Build On Web2 & Web3
             </h3>
           </RevealAnimation>
 

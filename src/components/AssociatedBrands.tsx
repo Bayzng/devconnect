@@ -89,7 +89,7 @@ const AssociatedBrands = () => {
             Trusted Partners & Integrations
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Partnering with industry leaders to deliver cutting-edge AI agent solutions
+            Partnering with blockchain leaders to create impactful tech events.
           </p>
         </RevealAnimation>
 

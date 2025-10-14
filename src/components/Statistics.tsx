@@ -9,10 +9,10 @@ const Statistics = () => {
   const isMobile = useIsMobile();
 
   const stats = [
-    { label: "Active Users", value: "5K+", icon: Users },
-    { label: "Tasks Automated", value: "10K+", icon: Settings2 },
-    { label: "Onboarding To Web3", value: "10K", icon: TimerIcon },
-    { label: "Client Satisfaction", value: "99.8%", icon: HeartHandshake },
+    { label: "Active Users", value: "200+", icon: Users },
+    { label: "Tasks Automated", value: "150+", icon: Settings2 },
+    { label: "Onboarding To Web3", value: "200+", icon: TimerIcon },
+    { label: "Satisfaction", value: "99.8%", icon: HeartHandshake },
   ];
 
   return (

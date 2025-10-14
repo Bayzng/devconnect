@@ -163,7 +163,7 @@ const FeatureDetails = () => {
                       <div className="absolute bottom-4 left-4 flex items-center text-white">
                         <MapPin className="mr-2 h-4 w-4" />
                         <span className="text-sm font-medium">
-                          Global Service
+                        {feature.title}
                         </span>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ const FeatureDetails = () => {
               <button
                 onClick={() => setActiveTab("gallery")}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium transition-colors relative",
+                  "hidden md:inline-block px-4 py-2 text-sm font-medium transition-colors relative",
                   activeTab === "gallery"
                     ? isDark
                       ? "text-white border-b-2 border-brand-500"
@@ -252,18 +252,23 @@ const FeatureDetails = () => {
                   >
                     <div className="p-6 md:p-10">
                       <div className="prose prose-lg dark:prose-invert max-w-none">
-                        <h2 className="text-3xl font-bold mb-6">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-6">
                           Service Overview
                         </h2>
-                        <p className="text-xl">{feature.longDescription}</p>
+                        <p className="text-base sm:text-lg md:text-xl">
+                          {feature.longDescription}
+                        </p>
 
                         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div
                             className={cn(
-                              "p-6 rounded-xl",
-                              isDark ? "bg-gray-800" : "bg-white"
+                              "p-6 rounded-xl shadow-md transition-colors duration-300",
+                              isDark
+                                ? "bg-gray-800 text-gray-100"
+                                : "bg-white text-gray-900"
                             )}
                           >
+                            {/* Icon */}
                             <div
                               className={cn(
                                 "p-3 rounded-lg w-fit mb-4",
@@ -274,20 +279,29 @@ const FeatureDetails = () => {
                             >
                               <Sparkles className="h-5 w-5" />
                             </div>
-                            <h3 className="text-xl font-bold mb-3">
-                              Pricing Plans
+
+                            {/* Title */}
+                            <h3 className="text-2xl font-bold mb-2 text-green-700">
+                              Join Our Coding Bootcamp
                             </h3>
-                            <p className="mb-2">
-                              Flexible and transparent pricing designed for
-                              every stage of your journey.
+
+                            {/* Description */}
+                            <p className="text-sm md:text-base mb-2 text-gray-400">
+                              Level up your skills with hands-on coding sessions
+                              and expert mentorship.
                             </p>
+                            <p className="text-sm md:text-base mb-6">
+                              Feel free to request a call to discuss your payment plan.
+                            </p>
+
+                            {/* Button */}
                             <a
                               href="https://forms.gle/6eAD11nGuPx6wrNM8"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Button className="w-full mt-20 rounded-full bg-green-600 hover:bg-green-700">
-                                Apply
+                              <Button className="w-full rounded-full bg-green-600 hover:bg-green-700 transition-all duration-300">
+                                Apply Now
                               </Button>
                             </a>
                           </div>
@@ -344,7 +358,7 @@ const FeatureDetails = () => {
                   >
                     <div className="p-6 md:p-10">
                       <div className="prose prose-lg dark:prose-invert max-w-none">
-                        <h2 className="text-3xl font-bold mb-6">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-6">
                           Key Benefits
                         </h2>
 
@@ -363,7 +377,7 @@ const FeatureDetails = () => {
                                   <Check className="h-5 w-5" />
                                 </div>
                                 <div>
-                                  <h3 className="text-xl font-bold mb-2">
+                                  <h3 className="text-lg sm:text-xl  mb-2">
                                     {benefit}
                                   </h3>
                                   <p className="text-gray-600 dark:text-gray-400">
@@ -395,7 +409,9 @@ const FeatureDetails = () => {
                   >
                     <div className="p-6 md:p-10">
                       <div className="prose prose-lg dark:prose-invert max-w-none">
-                        <h2 className="text-3xl font-bold mb-6">Our Process</h2>
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-6">
+                          Our Process
+                        </h2>
 
                         <div className="relative border-l-2 border-brand-500 pl-8 pb-10">
                           {feature.steps?.map((step: string, idx: number) => (
@@ -403,7 +419,9 @@ const FeatureDetails = () => {
                               <div className="absolute -left-10 top-0 flex items-center justify-center w-6 h-6 rounded-full text-white bg-brand-500">
                                 {idx + 1}
                               </div>
-                              <h3 className="text-xl font-bold mb-2">{step}</h3>
+                              <h3 className="text-base sm:text-xl font-bold mb-2">
+                                {step}
+                              </h3>
                             </div>
                           ))}
                         </div>
@@ -411,9 +429,8 @@ const FeatureDetails = () => {
                     </div>
                   </div>
                 )}
-
                 {activeTab === "gallery" && feature.gallery && (
-                  <div className="rounded-2xl overflow-hidden mb-8">
+                  <div className="hidden md:block rounded-2xl overflow-hidden mb-8">
                     <div className="p-6 md:p-10">
                       <h2 className="text-3xl font-bold mb-6">Gallery</h2>
                       <ImageSlider

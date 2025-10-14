@@ -91,7 +91,7 @@ const Footer = () => {
                   "text-sm mb-4",
                   theme === "dark" ? "text-gray-400" : "text-gray-600"
                 )}>
-                  Get the latest updates on AI advancements and exclusive offers.
+                  Get the latest updates on coding trends and exclusive bootcamp offers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Input
@@ -121,14 +121,14 @@ const Footer = () => {
                     "text-base font-semibold mb-6",
                     theme === "dark" ? "text-white" : "text-gray-900"
                   )}>
-                    Product
+                    Development
                   </h4>
                   <ul className="space-y-4">
                     {/* <FooterLink href="#features">AI Features</FooterLink> */}
-                    <FooterLink href="#roadmap">Product Roadmap</FooterLink>
+                    <FooterLink href="#roadmap">Web2 Development</FooterLink>
                     {/* <FooterLink href="#">Integrations</FooterLink> */}
                     {/* <FooterLink href="#">Changelog</FooterLink> */}
-                    <FooterLink href="#">Documentation</FooterLink>
+                    <FooterLink href="#">Web3 Development</FooterLink>
                   </ul>
                 </div>
               </RevealAnimation>
@@ -139,14 +139,14 @@ const Footer = () => {
                     "text-base font-semibold mb-6",
                     theme === "dark" ? "text-white" : "text-gray-900"
                   )}>
-                    Resources
+                    Services
                   </h4>
                   <ul className="space-y-4">
-                    <FooterLink href="#">Getting Started</FooterLink>
-                    {/* <FooterLink href="#">API Reference</FooterLink> */}
-                    {/* <FooterLink href="#">Tutorials</FooterLink> */}
-                    <FooterLink href="#">Community Forum</FooterLink>
-                    <FooterLink href="#">Case Studies</FooterLink>
+                    <FooterLink href="#">Frontend</FooterLink>
+                    <FooterLink href="#">Backend</FooterLink>
+                    <FooterLink href="#">Blockchain</FooterLink>
+                    <FooterLink href="#">Ui/Ux & Graphics</FooterLink>
+                    <FooterLink href="#">Fullstack Development</FooterLink>
                   </ul>
                 </div>
               </RevealAnimation>
