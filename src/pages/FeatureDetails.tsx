@@ -291,7 +291,7 @@ const FeatureDetails = () => {
                               and expert mentorship.
                             </p>
                             <p className="text-sm md:text-base mb-6">
-                              Feel free to request a call to discuss your payment plan.
+                              Don’t miss out! Secure your place and join the next cohort 🚀    
                             </p>
 
                             {/* Button */}
@@ -323,7 +323,7 @@ const FeatureDetails = () => {
                               <Clock className="h-5 w-5" />
                             </div>
                             <h3 className="text-xl font-bold mb-3">
-                              Pricing Plan
+                              Enrollment Plan
                             </h3>
                             <p className="text-lg font-semibold mb-2 text-green-700">
                               #{feature.price}{" "}

@@ -8,23 +8,9 @@ import gsap from "gsap";
 
 // Team member data
 const teamMembers = [
-  
+
   {
     id: 1,
-    name: "Adedeji K",
-    role: "Blockchain Developer",
-    bio: "Specialized in blockchain development, smart contracts, and decentralized systems.",
-    avatar:
-      "https://static.vecteezy.com/system/resources/previews/024/183/502/non_2x/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg",
-    socials: {
-      twitter: "",
-      github: "",
-      linkedin: "",
-      email: "",
-    },
-  },
-  {
-    id: 2,
     name: "A. Adebayo",
     role: "Lead Developer",
     bio: "Passionate developer driving innovation and growth in Africa’s tech ecosystem.",
@@ -35,6 +21,21 @@ const teamMembers = [
       github: "https://github.com/Bayzng",
       linkedin: "https://www.linkedin.com/in/abdulakeem-adebayo-678530199",
       email: "meet.bayzng@gmail.com",
+    },
+  },
+  
+  {
+    id: 2,
+    name: "Adedeji K",
+    role: "Blockchain Developer",
+    bio: "Specialized in blockchain development, smart contracts, and decentralized systems.",
+    avatar:
+      "https://static.vecteezy.com/system/resources/previews/024/183/502/non_2x/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg",
+    socials: {
+      twitter: "",
+      github: "",
+      linkedin: "",
+      email: "",
     },
   },
   {
@@ -55,7 +56,7 @@ const teamMembers = [
     id: 4,
     name: "Ella Johnson",
     role: "Event Lead",
-    bio: "Event Lead, driving impactful tech events that connect and inspire communities..",
+    bio: "Event Lead, driving impactful tech events that connect and inspire communities.",
     avatar:
       "https://t4.ftcdn.net/jpg/11/66/06/77/360_F_1166067709_2SooAuPWXp20XkGev7oOT7nuK1VThCsN.jpg",
     socials: {
