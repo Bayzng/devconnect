@@ -179,11 +179,11 @@ const Footer = () => {
         )}>
           <div className="flex space-x-4 mb-4 md:mb-0">
             <SocialIcon>
-              <a href=""><FaLinkedin /></a>
+              <a href="https://x.com/dev_connectX"><FaXTwitter /></a>
             </SocialIcon>
 
             <SocialIcon>
-              <a href=""><FaXTwitter /></a>
+              <a href=""><FaLinkedin /></a>
             </SocialIcon>
 
             <SocialIcon>
@@ -265,7 +265,7 @@ const SocialIcon = ({ children }: SocialIconProps) => {
 
   return (
     <a
-      href="#"
+      href="/"
       className={cn(
         "h-10 w-10 rounded-xl flex items-center justify-center transition-all duration-300",
         theme === "dark"
