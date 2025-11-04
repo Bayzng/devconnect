@@ -36,7 +36,7 @@ export const features = [
     ],
     icon: <LucideShoppingBag />,
     price: "300,000",
-    month: "3",
+    month: "4",
   },
   {
     id: "Backend",
@@ -65,7 +65,7 @@ export const features = [
     ],
     icon: <Users />,
     price: "300,000",
-    month: "3",
+    month: "4",
   },
   {
     id: "Blockchain",
@@ -151,7 +151,7 @@ export const features = [
     ],
     icon: <LampCeilingIcon />,
     price: "150,000",
-    month: "2",
+    month: "3",
   },
   {
     id: "Fullstack",
@@ -180,6 +180,6 @@ export const features = [
     ],
     icon: <RocketIcon />,
     price: "500,000",
-    month: "6",
+    month: "8",
   },
 ];

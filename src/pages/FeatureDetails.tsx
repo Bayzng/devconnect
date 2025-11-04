@@ -163,7 +163,7 @@ const FeatureDetails = () => {
                       <div className="absolute bottom-4 left-4 flex items-center text-white">
                         <MapPin className="mr-2 h-4 w-4" />
                         <span className="text-sm font-medium">
-                        {feature.title}
+                          {feature.title}
                         </span>
                       </div>
                     </div>
@@ -291,7 +291,8 @@ const FeatureDetails = () => {
                               and expert mentorship.
                             </p>
                             <p className="text-sm md:text-base mb-6">
-                              Don’t miss out! Secure your place and join the next cohort 🚀    
+                              Don’t miss out! Secure your place and join the
+                              next cohort 🚀
                             </p>
 
                             {/* Button */}
@@ -329,8 +330,12 @@ const FeatureDetails = () => {
                               #{feature.price}{" "}
                               <span className="text-sm font-normal text-white">
                                 / {feature.month} months
+                                <span className="text-yellow-400 font-medium relative -top-1 ml-1">
+                                  + 1 month project
+                                </span>
                               </span>
                             </p>
+
                             <ul className="text-sm space-y-1">
                               <li>✅ Full access to all DevConnect programs</li>
                               <li>

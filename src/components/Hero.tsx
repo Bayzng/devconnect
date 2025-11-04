@@ -155,9 +155,13 @@ const Hero = () => {
                 theme === "dark" ? "" : "mb-10 sm:mb-12"
               }`}
             >
-              <Link to={""}>
+              <Link 
+                to={"https://forms.gle/enrkDtz4eeo6Kxyf6"}
+                 target="_blank"
+                rel="noopener noreferrer"
+                >
                 <Button className="w-full sm:w-auto relative cursor-pointer px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full bg-black text-white font-medium border border-green-600 shadow-md hover:bg-gray-900 transition duration-300 ease-in-out overflow-hidden group">
-                  <span className="relative z-10">Bootcamp</span>
+                  <span className="relative z-10">Apply</span>
                   <BringToFrontIcon className="hidden sm:inline" />
                   <div className="absolute inset-0 bg-gradient-to-b from-green-600/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute -top-[70%] left-1/2 w-16 sm:w-24 h-8 sm:h-10 bg-green-600 rounded-full transform -translate-x-1/2 blur-xl"></div>

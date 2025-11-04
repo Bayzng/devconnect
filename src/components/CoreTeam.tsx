@@ -17,7 +17,7 @@ const teamMembers = [
     avatar:
       "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg",
     socials: {
-      twitter: "https://twitter.com/dev_bayz",
+      twitter: "https://x.com/dev_bayz",
       github: "https://github.com/Bayzng",
       linkedin: "https://www.linkedin.com/in/abdulakeem-adebayo-678530199",
       email: "meet.bayzng@gmail.com",
@@ -26,16 +26,16 @@ const teamMembers = [
   
   {
     id: 2,
-    name: "Adedeji K",
+    name: "Mubarak O.",
     role: "Blockchain Developer",
     bio: "Specialized in blockchain development, smart contracts, and decentralized systems.",
     avatar:
       "https://static.vecteezy.com/system/resources/previews/024/183/502/non_2x/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg",
     socials: {
-      twitter: "",
-      github: "",
-      linkedin: "",
-      email: "",
+      twitter: "https://x.com/blockchain_guy0?s=21",
+      github: "https://github.com/almustanir",
+      linkedin: "https://www.linkedin.com/in/olajide-mubarak-5734b6279",
+      email: "olajidemubarak01@gmail.com",
     },
   },
   {
